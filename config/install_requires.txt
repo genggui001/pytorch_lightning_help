@@ -1,4 +1,1 @@
-xs-lib
-tqdm
-fire
-sure
+pytorch-lightning==1.0.5

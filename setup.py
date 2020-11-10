@@ -13,12 +13,12 @@ long_description = read_file('./README.md')
 setuptools.setup(
     name=project_name,
     version=version,
-    author="xsthunder",
-    author_email="xsthunder@outlook.com",
+    author="genggui001",
+    author_email="genggui001@outlook.com",
     description="personal lib",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url=f"https://github.com/xsthunder/{project_name}",
+    url=f"https://github.com/genggui001/{project_name}",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -26,5 +26,4 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=install_requires,
-    python_requires='>=3.4',
 )

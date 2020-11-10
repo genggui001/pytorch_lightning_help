@@ -16,8 +16,3 @@ conda activate $env_name
 yes | pip install -r install_requires.txt
 
 
-# sure=1.4.11
-# ipython=7.8.0
-# tqdm=4.36.1
-# python=3.7.4
-# xsthunder-python-lib=0.0.1
