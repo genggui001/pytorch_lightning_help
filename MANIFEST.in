@@ -1,0 +1,2 @@
+include config/install_requires.txt
+include config/project_name.txt
