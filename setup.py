@@ -14,7 +14,7 @@ setuptools.setup(
     name=project_name,
     version=version,
     author="genggui001",
-    author_email="genggui001@outlook.com",
+    author_email="genggui001@gmail.com",
     description="personal lib",
     long_description=long_description,
     long_description_content_type="text/markdown",
