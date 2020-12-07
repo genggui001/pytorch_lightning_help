@@ -2,7 +2,7 @@ language: python
 python:
 - '3.6'
 install:
-- pip install -r requirements.txt
+- pip install -r ./config/install_requires.txt
 script: python -m unittest
 deploy:
   provider: pypi
