@@ -43,6 +43,9 @@ class EvalCallback(pl.callbacks.Callback):
 
         if val_score > self.best_score:
             self.best_score = val_score
+            # 加入检验下的最佳分数
+            train_model.logger.experiment.add_scalar("val_best_score", self.best_score, train_model.current_epoch)
+
             test_score = self.test_operation(trainer, train_model, outputs)
             # 加入test_score分数作为指标
             if test_score is not None:

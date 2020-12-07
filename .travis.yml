@@ -1,17 +1,13 @@
+language: python
+python:
+- '3.6'
 install:
-- if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-  -O miniconda.sh; else wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  -O miniconda.sh; fi
-- bash miniconda.sh -b -p $HOME/miniconda
-- export PATH="$HOME/miniconda/bin:$PATH"
-- hash -r
-- conda config --set always_yes yes --set changeps1 no
-- conda update -q conda
-- cd ./config/
-- bash ./create-env.sh
-- cd ..
-script:
-- bash ./rename_project_name.sh "test_project_name_on_travis"
-- cd tests
-- bash run.sh
-- cd ..
+- pip install -r requirements.txt
+script: python -m unittest
+deploy:
+  provider: pypi
+  user: __token__
+  on:
+    branch: release
+  password:
+    secure: jR0fR7Vg9mu1dx5RY9wFqSnlQEARDbTFULoikPrwDUEnZUlU8kjdnRx+NSevg1tImHdQMf9NW5CW/xKt0uWdPhw63IjWv0VbunDN9eIKW1RJxERl90WtRCO8ZhBWONifL7QKH2GQHd2XzQUkQRUurRsW13wjDNpyn/FKbnadcjxTbVIwMyZkhcJeLCXdmSW7l7NTTTzqc3eMFVCIhLZjc4YmDKtUYrG7hFNszctMs0gYyFobt8T71FdDXnwLdJNj5JjyQUuxDxjdba4ES4bsN1PzeU9Gpv0QmQKEmOMXM2Te2MwV4nTXK2s1wxh48sTUjjoLtaPRTksLZuS2VhTsUFS+COFC7KSSMHvltOQXvLhHAj9j9blgEQMRcXDWaA3FeMDcFjTs64GA0N2HIfw22WQ/mV1tFyu7dBVEVI+FeThc1QSSbLjpRiKvM9Y1WNqsEhWrzgfFHxB2l9ql9GUc0ZhHWrp8UM2wR7B8DRsn4qalIdQhsuYx1eUOaZ/GD5xJY7FVYdMcillLuN5MLbcb2aXPfFOpCO8QvfqoTS2vf6HUubbQvtfJlmGzpldbqMJ8orFyWM9quueIwjJzpGPeJR1O9h+rOUSxDU5fV2ZDK2wlPvFafVAIVZn9Ql4g0NlVn+H+zIDyafPGdG2LzJn4JkTfw1vTJX4Ig9X/I6pbExY=
